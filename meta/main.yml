@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Peter Zahradnik
+  description: "Role for setting up keepalived"
+  license: license (Apache)
+  min_ansible_version: 1.5
+  platforms:
+  - name: EL
+    versions:
+    - 5
+    - 6
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - system
+dependencies: []
+documentation_url: https://github.com/petzah/ansible-keepalived
