@@ -1,5 +1,14 @@
 {% if global_defs is defined %}
 global_defs {
+{% if global_defs.enable_script_security is defined and global_defs.enable_script_security == True %}
+  enable_script_security
+{% endif %}
+{% if global_defs.lvs_sync_daemon is defined %}
+  lvs_sync_daemon {{ global_defs.lvs_sync_daemon }}
+{% endif %}
+{% if global_defs.script_user is defined %}
+  script_user {{ global_defs.script_user }}
+{% endif %}
 {% if global_defs.notification_email is defined %}
   notification_email {
 {% for email in global_defs.notification_email %}
@@ -18,6 +27,15 @@ global_defs {
 {% endif %}
 {% if global_defs.router_id is defined %}
   router_id {{ global_defs.router_id }}
+{% endif %}
+{% if global_defs.vrrp_skip_check_adv_addr is defined and global_defs.vrrp_skip_check_adv_addr == True  %}
+  vrrp_skip_check_adv_addr
+{% endif %}
+{% if global_defs.vrrp_garp_interval is defined %}
+  vrrp_garp_interval {{ global_defs.vrrp_garp_interval | float(default=0.01) }}
+{% endif %}
+{% if global_defs.vrrp_gna_interval is defined %}
+  vrrp_gna_interval {{ global_defs.vrrp_gna_interval | float(default=0.00001) }}
 {% endif %}
 {% if global_defs.vrrp_mcast_group4 is defined %}
   vrrp_mcast_group4 {{ global_defs.vrrp_mcast_group4 }}

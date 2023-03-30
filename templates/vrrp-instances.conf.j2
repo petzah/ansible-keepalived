@@ -102,7 +102,7 @@ vrrp_instance {{ item.name }} {
 {% if item.preempt_delay is defined and item.preempt_delay <= 1000 %}
   preempt_delay {{ item.preempt_delay | int | abs }}
 {% endif %}
-{% if item.debug is defined and item.debug == True%}
+{% if item.debug is defined and item.debug == True %}
   debug
 {% endif %}
 {% if item.notify_master is defined %}

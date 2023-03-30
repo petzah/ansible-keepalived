@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: Peter Zahradnik
-  description: "Role for setting up keepalived"
+  author: Brandon Lamb
+  description: "Ansible Galaxy role for setting up keepalived"
   license: license (Apache)
   min_ansible_version: 1.5
   platforms:
@@ -18,4 +18,4 @@ galaxy_info:
   categories:
   - system
 dependencies: []
-documentation_url: https://github.com/petzah/ansible-keepalived
+documentation_url: https://github.com/olypenisp/ansible-keepalived

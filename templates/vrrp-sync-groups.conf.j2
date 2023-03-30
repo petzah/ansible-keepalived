@@ -1,3 +1,4 @@
+## Group the external and internal VRRP instances so they fail over together
 {% if vrrp_sync_groups is defined %}
 {% for item in vrrp_sync_groups %}
 vrrp_sync_group {{ item.name }} {

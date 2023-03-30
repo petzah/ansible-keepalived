@@ -5,6 +5,12 @@ virtual_server {{ item.name }} {
 {% if item.delay_loop is defined %}
   delay_loop {{ item.delay_loop }}
 {% endif %}
+{% if item.lb_algo is defined %}
+  lb_algo {{ item.lb_algo }}
+{% endif %}
+{% if item.lb_kind is defined %}
+  lb_kind {{ item.lb_kind }}
+{% endif %}
 {% if item.lvs_sched is defined %}
   lvs_sched {{ item.lvs_sched }}
 {% endif %}

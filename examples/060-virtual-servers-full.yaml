@@ -1,0 +1,19 @@
+- hosts: keepalived
+  roles:
+    - role: ansible-keepalived
+      virtual_servers:
+        - name: svc-1
+          delay_loop: 6
+          ip: "10.128.0.60"
+          lb_algo: "wlc"
+          lb_kind: "DR"
+          persistence_timeout: 600
+          port: 53
+          protocol: "UDP"
+          real_server:
+            - ip: "10.128.0.27"
+              port: 53
+              weight: 100
+            - ip: "10.128.0.28"
+              port: 53
+              weight: 100
